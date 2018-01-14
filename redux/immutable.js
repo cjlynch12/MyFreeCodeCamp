@@ -14,8 +14,13 @@ const immutableReducer = (state = todos, action) => {
     case ADD_TO_DO:
       // don't mutate state here or the tests will fail
       //make a COPY of the state, mutate the new copy, return the new copy
+      
+      //using slice
       let newArray = state.slice();
       newArray.push(action.todo);
+      
+      //using spread operator
+      // let newArray = [...state,todo.action];
       return newArray;
     default:
       return state;
